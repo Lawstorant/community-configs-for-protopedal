@@ -7,7 +7,9 @@ echo ""
 # list device files in device-database
 DEVICES=$(echo device-database/*)
 RULES_DIR=rules
-INPUT_GROUP="$1"
+
+# default "input" if not set
+INPUT_GROUP=$([[ $1 == "" ]] && echo "input" || echo "$1")
 
 mkdir "$RULES_DIR"
 
