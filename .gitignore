@@ -1,2 +1,5 @@
 .vscode
 .venv
+rules
+services
+scripts
