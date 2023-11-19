@@ -1,8 +1,8 @@
 [Unit]
-Description=protopedal service for <device-nice>
+Description=protopedal service for <device>
 
 [Service]
 Type=simple
 TimeoutSec=infinity
 GuessMainPID=false
-ExecStart=/usr/bin/<device>.sh %I
+ExecStart=/usr/bin/protopedal-<device-short>.sh %I
