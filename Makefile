@@ -1,17 +1,17 @@
 all: scripts rules services
 
 scripts:
-    ./create-scripts.sh
+	./create-scripts.sh
 
 rules:
-    ./create-rules.sh
+	./create-rules.sh
 
 services:
-    ./create-services.sh
+	./create-services.sh
 
 install:
 
 clean:
-    rm -rf scripts
-    rm -rf rules
-    rm -ef services
+	rm -rf scripts
+	rm -rf rules
+	rm -ef services
