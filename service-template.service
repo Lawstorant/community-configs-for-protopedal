@@ -1,0 +1,9 @@
+[Unit]
+Description=protopedal service for <device-nice>
+
+[Service]
+Type=simple
+TimeoutSec=infinity
+GuessMainPID=false
+ExecStart=/usr/bin/<device>.sh %I
+

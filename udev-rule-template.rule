@@ -1,0 +1,2 @@
+SUBSYSTEM=="input", KERNEL=="event*", ATTRS{idVendor}=="<vendor-id>", ATTRS{idProduct}=="<product-id>", ACTION=="add", MODE="660", GROUP="<input-group>", TAG+="systemd", ENV{SYSTEMD_WANTS}+="<device>@$env{DEVNAME}.service"
+
