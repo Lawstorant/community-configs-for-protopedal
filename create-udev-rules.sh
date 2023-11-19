@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 
+echo ""
 echo "Creating udev rules for protopedal"
+echo ""
 
 # list device files in device-database
 DEVICES=$(echo device-database/*)
@@ -10,11 +12,13 @@ INPUT_GROUP="$1"
 mkdir "$RULES_DIR"
 
 for DEVICE in $DEVICES; do
-    RULE_CONTENT=$(cat udev-rule-template.rule)
+    RULE_CONTENT=$(cat templates/udev-rule-template.rule)
     RULE_NAME="99-protopedal-<device>.rule"
     SHORTNAME=""
     VENDOR=""
     PRODUCT=""
+
+    echo "Creating rule for $DEVICE"
 
     while read -r LINE; do
         PROPERTY=$(cut -d "=" -f 1 <<< "$LINE")
@@ -45,4 +49,5 @@ for DEVICE in $DEVICES; do
     echo "$RULE_CONTENT" > "$RULES_DIR/$RULE_NAME"
 done
 
+echo ""
 echo "Done creating udev rules for protopedal"
