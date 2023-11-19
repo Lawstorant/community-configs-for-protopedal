@@ -4,7 +4,7 @@ scripts:
 	./create-scripts.sh
 
 rules:
-	./create-rules.sh
+	./create-udev-rules.sh $(group)
 
 services:
 	./create-services.sh
@@ -19,4 +19,4 @@ uninstall:
 clean:
 	rm -rf scripts
 	rm -rf rules
-	rm -ef services
+	rm -rf services
