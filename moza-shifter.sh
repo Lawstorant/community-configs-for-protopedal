@@ -1,9 +1,14 @@
 #!/usr/bin/env bash
 
+if [[ -z "$1" ]]; then
+    echo "Device not specified"
+    exit 1
+fi
+
 protopedal \
     --name "MOZA Racing HGP Shifter" \
-    -v 346e \
-    -p 001e \
+    -v "346e" \
+    -p "001e" \
     --grab \
     --no-auto-axes \
     -a X -a Y -a Z \
@@ -16,4 +21,4 @@ protopedal \
     -b BASE6 -s BASE5 \
     -b BASE7 -s BASE6 \
     -b BASE8 -s TOP2 \
-    $1
+    "$1"

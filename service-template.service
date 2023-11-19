@@ -6,4 +6,3 @@ Type=simple
 TimeoutSec=infinity
 GuessMainPID=false
 ExecStart=/usr/bin/<device>.sh %I
-
