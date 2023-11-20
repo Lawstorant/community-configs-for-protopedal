@@ -94,6 +94,16 @@ buttons() {
     echo -e "$OUTPUT"
 }
 
+nofuzz() {
+    local AXIS
+    local COMMAND
+
+    AXIS=$(cut -d "=" -f 2 <<< "${1,,}")
+    COMMAND="evdev-joystick --evdev \"\$1\" --axis $AXIS --fuzz 0 --deadzone 0"
+
+    echo "$COMMAND"
+}
+
 # =============================================================================
 
 echo "Creating scripts for protopedal"
@@ -130,6 +140,7 @@ for DEVICE in $DEVICES; do
 
             *)
                 [[ ${LINE,,} =~ ^shortname ]] && SHORTNAME=$(cut -d "=" -f 2 <<< "${LINE,,}")
+                [[ ${LINE,,} =~ ^nofuzz ]] && SCRIPT_CONTENT="$(sed "/^# evdev-joystick/a $(nofuzz "$LINE")" <<< "$SCRIPT_CONTENT")"
                 [[ $DECIDE == "" ]] && continue
                 [[ $LINE == "" ]] && continue
                 SCRIPT_CONTENT+=$(eval $DECIDE "$LINE")
