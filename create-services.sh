@@ -15,7 +15,8 @@ for DEVICE in $DEVICES; do
     NAME=""
     SHORTNAME=""
 
-    echo "Creating service for $DEVICE"
+    DEVICE_ONLY=$(cut -d "/" -f 2 <<< "$DEVICE")
+    echo "Creating service for $DEVICE_ONLY"
 
     while read -r LINE; do
         PROPERTY=$(cut -d "=" -f 1 <<< "$LINE")

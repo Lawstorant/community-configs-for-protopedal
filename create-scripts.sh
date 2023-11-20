@@ -111,7 +111,8 @@ for DEVICE in $DEVICES; do
     SHORTNAME=""
     DECIDE=""
 
-    echo "Creating script for $DEVICE"
+    DEVICE_ONLY=$(cut -d "/" -f 2 <<< "$DEVICE")
+    echo "Creating script for $DEVICE_ONLY"
 
     while read -r LINE; do
         case $LINE in
