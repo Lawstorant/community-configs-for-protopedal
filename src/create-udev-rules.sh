@@ -13,8 +13,8 @@ INPUT_GROUP=$([[ $1 == "" ]] && echo "input" || echo "$1")
 mkdir -p "$RULES_DIR"
 
 for DEVICE in $DEVICES; do
-    RULE_CONTENT=$(cat src/templates/udev-rule-template.rule)
-    RULE_NAME="99-protopedal-<device>.rule"
+    RULE_CONTENT=$(cat src/templates/udev-rule-template.rules)
+    RULE_NAME="99-protopedal-<device>.rules"
     SHORTNAME=""
     VENDOR=""
     PRODUCT=""
