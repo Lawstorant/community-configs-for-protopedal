@@ -3,4 +3,5 @@
 rules
 services
 scripts
+output
 **/test.sh

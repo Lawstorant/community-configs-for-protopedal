@@ -5,12 +5,12 @@ echo ""
 
 # list device files in device-database
 DEVICES=$(echo device-database/*)
-SERVICES_DIR=services
+SERVICES_DIR="output/services"
 
-mkdir "$SERVICES_DIR"
+mkdir -p "$SERVICES_DIR"
 
 for DEVICE in $DEVICES; do
-    SERVICE_CONTENT=$(cat templates/service-template.service)
+    SERVICE_CONTENT=$(cat src/templates/service-template.service)
     SERVICE_NAME="protopedal-<device>@.service"
     NAME=""
     SHORTNAME=""

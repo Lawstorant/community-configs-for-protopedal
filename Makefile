@@ -1,18 +1,18 @@
 all: scripts rules services
 
 scripts:
-	./create-scripts.sh
+	src/create-scripts.sh
 
 rules:
-	./create-udev-rules.sh $(group)
+	src/create-udev-rules.sh $(group)
 
 services:
-	./create-services.sh
+	src/create-services.sh
 
 install:
-	mv scripts/*  /usr/bin/
-	mv rules/*    /etc/udev/rules.d/
-	mv services/* /etc/systemd/system/
+	mv output/scripts/*  /usr/bin/
+	mv output/rules/*    /etc/udev/rules.d/
+	mv output/services/* /etc/systemd/system/
 
 uninstall:
 	rm /usr/bin/protopedal-*.sh
@@ -20,6 +20,4 @@ uninstall:
 	rm /etc/systemd/system/protopedal-*.service
 
 clean:
-	rm -rf scripts
-	rm -rf rules
-	rm -rf services
+	rm -rf output

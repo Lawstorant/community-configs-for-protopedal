@@ -101,12 +101,12 @@ echo ""
 
 # list device files in device-database
 DEVICES=$(echo device-database/*)
-SCRIPTS_DIR=scripts
+SCRIPTS_DIR="output/scripts"
 
-mkdir "$SCRIPTS_DIR"
+mkdir -p "$SCRIPTS_DIR"
 
 for DEVICE in $DEVICES; do
-    SCRIPT_CONTENT=$(cat templates/script-template.sh)
+    SCRIPT_CONTENT=$(cat src/templates/script-template.sh)
     SCRIPT_NAME="protopedal-<device>.sh"
     SHORTNAME=""
     DECIDE=""

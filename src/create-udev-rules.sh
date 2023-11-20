@@ -5,15 +5,15 @@ echo ""
 
 # list device files in device-database
 DEVICES=$(echo device-database/*)
-RULES_DIR=rules
+RULES_DIR="output/rules"
 
 # default "input" if not set
 INPUT_GROUP=$([[ $1 == "" ]] && echo "input" || echo "$1")
 
-mkdir "$RULES_DIR"
+mkdir -p "$RULES_DIR"
 
 for DEVICE in $DEVICES; do
-    RULE_CONTENT=$(cat templates/udev-rule-template.rule)
+    RULE_CONTENT=$(cat src/templates/udev-rule-template.rule)
     RULE_NAME="99-protopedal-<device>.rule"
     SHORTNAME=""
     VENDOR=""
