@@ -10,14 +10,17 @@ services:
 	src/create-services.sh
 
 install:
-	cp output/scripts/*  /usr/bin/
-	cp output/rules/*    /etc/udev/rules.d/
-	cp output/services/* /etc/systemd/system/
+	mkdir -p $(prefix)/usr/bin/
+	mkdir -p $(prefix)/etc/udev/rules.d/
+	mkdir -p $(prefix)/etc/systemd/system/
+	cp output/scripts/*  $(prefix)/usr/bin/
+	cp output/rules/*    $(prefix)/etc/udev/rules.d/
+	cp output/services/* $(prefix)/etc/systemd/system/
 
 uninstall:
-	rm /usr/bin/protopedal-*.sh
-	rm /etc/udev/rules.d/99-protopedal-*.rules
-	rm /etc/systemd/system/protopedal-*.service
+	rm $(prefix)/usr/bin/protopedal-*.sh
+	rm $(prefix)/etc/udev/rules.d/99-protopedal-*.rules
+	rm $(prefix)/etc/systemd/system/protopedal-*.service
 
 clean:
 	rm -rf output
