@@ -15,6 +15,9 @@ install:
 	mv services/* /etc/systemd/system/
 
 uninstall:
+	rm /usr/bin/protopedal-*.sh
+	rm /etc/udev/rules.d/99-protopedal-*.rule
+	rm /etc/systemd/system/protopedal-*.service
 
 clean:
 	rm -rf scripts
