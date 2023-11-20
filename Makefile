@@ -10,9 +10,9 @@ services:
 	src/create-services.sh
 
 install:
-	mv output/scripts/*  /usr/bin/
-	mv output/rules/*    /etc/udev/rules.d/
-	mv output/services/* /etc/systemd/system/
+	cp output/scripts/*  /usr/bin/
+	cp output/rules/*    /etc/udev/rules.d/
+	cp output/services/* /etc/systemd/system/
 
 uninstall:
 	rm /usr/bin/protopedal-*.sh
