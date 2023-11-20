@@ -96,7 +96,6 @@ buttons() {
 
 # =============================================================================
 
-echo ""
 echo "Creating scripts for protopedal"
 echo ""
 
@@ -146,3 +145,4 @@ done
 
 echo ""
 echo "Done creating scripts for protopedal"
+echo ""

@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-echo ""
 echo "Creating udev rules for protopedal"
 echo ""
 
@@ -53,3 +52,4 @@ done
 
 echo ""
 echo "Done creating udev rules for protopedal"
+echo ""

@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-echo ""
 echo "Creating systemd services for protopedal"
 echo ""
 
@@ -43,3 +42,4 @@ done
 
 echo ""
 echo "Done creating systemd services for protopedal"
+echo ""
